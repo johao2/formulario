@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Johao</title>
+</head>
+<body>
+    <center><h1>Formulario J.N.D</h1></center>
+    <table align="center">
+        <tr>
+            <!-- Celda para la imagen -->
+            <td valign="top" width="450">
+                <img src="https://img.freepik.com/vector-premium/hombre-recibio-mensaje-internet-forma-remota-uso-comunicacion-navegador-portatil-aislado_618374-54.jpg" alt="Imagen de mensaje recibido" width="450">
+            </td>
+            <!-- Celda para el formulario -->
+            <td valign="top">
+                <form action="envio.html" method="GET">
+                    <table align="center">
+                        <tr>
+                            <td><label for="nombres">Nombres:</label></td>
+                            <td><input type="text" id="nombres" name="nombres" size="20"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="edad">Edad:</label></td>
+                            <td><input type="number" id="edad" name="edad" size="5"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="contraseña">Contraseña:</label></td>
+                            <td><input type="password" id="contraseña" name="contraseña" size="20"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="fecha">Fecha:</label></td>
+                            <td><input type="date" id="fecha" name="fecha" size="10"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="correo">Correo:</label></td>
+                            <td><input type="email" id="correo" name="correo" size="20"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="solo-lectura">Solo lectura:</label></td>
+                            <td><input type="text" id="solo-lectura" name="solo-lectura" readonly size="20"></td>
+                        </tr>
+                        <tr>
+                            <td>Textarea:</td>
+                            <td><textarea name="mytextarea" rows="2" cols="40"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Lista de Colores</td>
+                            <td>
+                                <select id="color" name="color" required>
+                                    <option value="amarillo">Amarillo</option>            
+                                    <option value="rojo">Rojo</option>
+                                    <option value="azul">Azul</option>
+                                    <option value="verde">Verde</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Radio</td>
+                            <td>
+                                <input type="radio" name="language" id="html" value="HTML">
+                                <label for="html">HTML</label><br>
+                                <input type="radio" name="language" id="css" value="CSS">
+                                <label for="css">CSS</label><br>
+                                <input type="radio" name="language" id="javascript" value="JAVASCRIPT">
+                                <label for="javascript">JAVASCRIPT</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Check:</td>
+                            <td>
+                                <input type="checkbox" id="html" name="language" value="html">
+                                <label for="html">HTML</label><br>
+                                <input type="checkbox" id="css" name="language" value="css">
+                                <label for="css">CSS</label><br>
+                                <input type="checkbox" id="javascript" name="language" value="javascript">
+                                <label for="javascript">JAVASCRIPT</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Subir Archivo:</td>
+                            <td><input type="file" id="fileInput" name="fileInput"></td>
+                        </tr>
+                        <tr>
+                            <td>Color:</td>
+                            <td><input type="color" id="colorInput" name="colorInput" value="#9E0101"></td>
+                        </tr>
+                        <tr>
+                            <td>Placeholder:</td>
+                            <td><input type="number" id="placeholderInput" name="placeholderInput" placeholder="Ingrese solo números"></td>
+                        </tr>
+                        <tr>
+                            <td>Max Length:</td>
+                            <td><input type="text" id="maxLengthInput" name="maxLengthInput" maxlength="5"></td>
+                        </tr>
+                        <tr>
+                            <td>Max:</td>
+                            <td><input type="number" id="maxInput" name="maxInput" min="0" max="5"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input type="reset" value="Resetear">
+                                <input type="submit" value="Enviar">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

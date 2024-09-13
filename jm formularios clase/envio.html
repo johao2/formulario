@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Enviados</title>
+</head>
+<body>
+    <h1>Datos Enviados</h1>
+    <table cellpadding="5" cellspacing="0" align="">
+        <tr>
+            <td><strong>Nombres:</strong></td>
+            <td><span id="nombres"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Edad:</strong></td>
+            <td><span id="edad"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Contraseña:</strong></td>
+            <td><span id="contraseña"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Fecha:</strong></td>
+            <td><span id="fecha"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Correo:</strong></td>
+            <td><span id="correo"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Solo lectura:</strong></td>
+            <td><span id="solo-lectura"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Textarea:</strong></td>
+            <td><span id="mytextarea"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Color Seleccionado:</strong></td>
+            <td><span id="color"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Lenguaje (Radio):</strong></td>
+            <td><span id="radioLenguaje"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Lenguajes (Checkbox):</strong></td>
+            <td><span id="checkboxLenguajes"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Archivo subido:</strong></td>
+            <td><span id="fileInput"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Color Específico:</strong></td>
+            <td>
+                <span id="colorBox" style="display: inline-block; width: 20px; height: 20px;"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Placeholder:</strong></td>
+            <td><span id="placeholderInput"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Max Length:</strong></td>
+            <td><span id="maxLengthInput"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Max:</strong></td>
+            <td><span id="maxInput"></span></td>
+        </tr>
+    </table>
+    <br><br>
+    <button onclick="history.back()">Atrás</button>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        document.getElementById('nombres').textContent = params.get('nombres');
+        document.getElementById('edad').textContent = params.get('edad');
+        document.getElementById('contraseña').textContent = params.get('contraseña');
+        document.getElementById('fecha').textContent = params.get('fecha');
+        document.getElementById('correo').textContent = params.get('correo');
+        document.getElementById('solo-lectura').textContent = params.get('solo-lectura');
+        document.getElementById('mytextarea').textContent = params.get('mytextarea');
+        document.getElementById('color').textContent = params.get('color');
+        document.getElementById('radioLenguaje').textContent = params.get('language');
+        document.getElementById('placeholderInput').textContent = params.get('placeholderInput');
+        document.getElementById('maxLengthInput').textContent = params.get('maxLengthInput');
+        document.getElementById('maxInput').textContent = params.get('maxInput');
+
+        const lenguajesSeleccionados = [];
+        params.getAll('language').forEach(function(value) {
+            lenguajesSeleccionados.push(value);
+        });
+        document.getElementById('checkboxLenguajes').textContent = lenguajesSeleccionados.join(', ');
+
+        const fileInput = params.get('fileInput');
+        if (fileInput) {
+            document.getElementById('fileInput').textContent = fileInput;
+        } else {
+            document.getElementById('fileInput').textContent = "No se subió ningún archivo.";
+        }
+
+        const colorInput = params.get('colorInput');
+        if (colorInput) {
+            document.getElementById('colorBox').style.backgroundColor = colorInput;
+        }
+    </script>
+</body>
+</html>
